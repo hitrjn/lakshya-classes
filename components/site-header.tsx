@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation'
 import { Menu, X, Phone } from 'lucide-react'
 import { Brand } from '@/components/brand'
 import { Button } from '@/components/ui/button'
+import { ThemeToggle } from '@/components/theme-toggle'
 import { cn } from '@/lib/utils'
 
 const links = [
@@ -74,6 +75,7 @@ export function SiteHeader() {
           </nav>
 
           <div className="flex items-center gap-2">
+            <ThemeToggle />
             <Button
               render={<Link href="/contact" />}
               nativeButton={false}
@@ -128,6 +130,10 @@ export function SiteHeader() {
             >
               Enquire Now
             </Button>
+            <div className="mt-1 flex items-center justify-between rounded-xl px-4 py-2 text-sm font-medium text-muted-foreground">
+              Appearance
+              <ThemeToggle />
+            </div>
           </nav>
         </div>
       )}

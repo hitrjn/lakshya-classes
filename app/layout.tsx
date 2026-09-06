@@ -3,6 +3,7 @@ import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
+import { ThemeProvider } from '@/components/theme-provider'
 import './globals.css'
 
 const inter = Inter({
@@ -26,8 +27,11 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
-  colorScheme: 'dark',
-  themeColor: '#0b1220',
+  colorScheme: 'light dark',
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#f7f9fc' },
+    { media: '(prefers-color-scheme: dark)', color: '#0b1220' },
+  ],
 }
 
 export default function RootLayout({
@@ -36,12 +40,23 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} bg-background`}>
+    <html
+      lang="en"
+      className={`${inter.variable} bg-background`}
+      suppressHydrationWarning
+    >
       <body className="font-sans antialiased">
-        <SiteHeader />
-        {children}
-        <SiteFooter />
-        {process.env.NODE_ENV === 'production' && <Analytics />}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <SiteHeader />
+          {children}
+          <SiteFooter />
+          {process.env.NODE_ENV === 'production' && <Analytics />}
+        </ThemeProvider>
       </body>
     </html>
   )
