@@ -5,8 +5,9 @@ import { Brand } from '@/components/brand'
 const nav = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About Us' },
-  { href: '/free-content', label: 'Free Content' },
-  { href: '/contact', label: 'Contact' },
+  { href: '/our-centres', label: 'Our Centres' },
+  { href: '/courses', label: 'Courses' },
+  { href: '/courses#free-content', label: 'Free Content' },
 ]
 
 const phones = ['+91 70501 47021', '+91 70501 47022']

@@ -1,8 +1,10 @@
 import type { Metadata } from 'next'
+import { notFound } from 'next/navigation'
 import { Phone, Mail, MapPin, Clock } from 'lucide-react'
 import { PageHero } from '@/components/page-hero'
 import { LeadForm } from '@/components/lead-form'
 import { Reveal } from '@/components/reveal'
+import { MapEmbed } from '@/components/map-embed'
 import { locations } from '@/lib/data'
 
 export const metadata: Metadata = {
@@ -14,6 +16,10 @@ export const metadata: Metadata = {
 const phones = ['+91 70501 47021', '+91 70501 47022']
 
 export default function ContactPage() {
+  // TEMP: Contact page hidden for now (do not delete code).
+  // Flip this off when you want the page live again.
+  notFound()
+
   return (
     <main>
       <PageHero
@@ -100,18 +106,31 @@ export default function ContactPage() {
         <div className="mt-10 grid gap-5 sm:grid-cols-2">
           {locations.map((loc, i) => (
             <Reveal key={loc.name} delay={(i % 2) * 90}>
-              <article className="flex h-full gap-4 rounded-2xl border border-border bg-card/40 p-6">
-                <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-primary/10 text-primary">
-                  <MapPin className="size-5" aria-hidden="true" />
-                </span>
-                <div>
-                  <h3 className="text-lg font-bold">{loc.name}</h3>
-                  <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
-                    {loc.address}
-                  </p>
-                  <p className="mt-1 text-sm font-medium text-foreground">
-                    {loc.city}
-                  </p>
+              <article className="h-full overflow-hidden rounded-2xl border border-border bg-card/40">
+                <div className="flex gap-4 p-6">
+                  <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-primary/10 text-primary">
+                    <MapPin className="size-5" aria-hidden="true" />
+                  </span>
+                  <div>
+                    <h3 className="text-lg font-bold">{loc.name}</h3>
+                    <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                      {loc.address}
+                    </p>
+                    <p className="mt-1 text-sm font-medium text-foreground">
+                      {loc.city}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="border-t border-border bg-background/30 p-4">
+                  <MapEmbed
+                    query={
+                      loc.mapQuery ?? `${loc.name}, ${loc.address}, ${loc.city}`
+                    }
+                    href={loc.mapUrl}
+                    title={loc.name}
+                    iframeClassName="h-52"
+                  />
                 </div>
               </article>
             </Reveal>

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { redirect } from 'next/navigation'
 import Link from 'next/link'
 import {
   PlayCircle,
@@ -15,6 +16,8 @@ import { SectionHeading } from '@/components/section-heading'
 import { CtaBand } from '@/components/cta-band'
 import { Reveal } from '@/components/reveal'
 import { Button } from '@/components/ui/button'
+
+const primaryPhone = '+91 70501 47021'
 
 export const metadata: Metadata = {
   title: 'Free Content | Lakshya Classes',
@@ -51,10 +54,13 @@ const subjects = [
 ]
 
 export default function FreeContentPage() {
+  // TEMP: Free Content has been merged into /courses (bottom section).
+  redirect('/courses#free-content')
+
   return (
     <main>
       <PageHero
-        eyebrow="Free Content"
+        eyebrow="Courses"
         title="Start learning today — completely free"
         description="Explore a growing library of lectures, notes, and practice material curated by our faculty to support your JEE and NEET journey."
       />
@@ -122,7 +128,7 @@ export default function FreeContentPage() {
             </p>
           </div>
           <Button
-            render={<Link href="/contact" />}
+              render={<a href={`tel:${primaryPhone.replace(/\s/g, '')}`} />}
             nativeButton={false}
             size="lg"
             className="shrink-0 rounded-full glow"

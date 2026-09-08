@@ -4,6 +4,8 @@ import { ArrowRight, Atom, Stethoscope, Sparkles } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Reveal } from '@/components/reveal'
 
+const primaryPhone = '+91 70501 47021'
+
 export function Hero() {
   return (
     <section className="relative overflow-hidden pt-32 pb-16 sm:pt-40">
@@ -31,7 +33,7 @@ export function Hero() {
           </p>
           <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row">
             <Button
-              render={<Link href="/contact" />}
+              render={<a href={`tel:${primaryPhone.replace(/\s/g, '')}`} />}
               nativeButton={false}
               size="lg"
               className="rounded-full glow"
@@ -40,13 +42,13 @@ export function Hero() {
               <ArrowRight className="size-4" aria-hidden="true" />
             </Button>
             <Button
-              render={<Link href="/free-content" />}
+              render={<Link href="/courses" />}
               nativeButton={false}
               size="lg"
               variant="outline"
               className="rounded-full border-border bg-transparent"
             >
-              Explore Free Content
+              Explore Courses
             </Button>
           </div>
         </Reveal>

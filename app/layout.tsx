@@ -1,6 +1,7 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
+import Script from 'next/script'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import { ThemeProvider } from '@/components/theme-provider'
@@ -46,11 +47,30 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="font-sans antialiased">
+        {/*
+          Theme init script (runs before React hydrates).
+          Avoids `next-themes` script injection inside a client component which triggers
+          React 19 warning: "Encountered a script tag while rendering React component".
+        */}
+        <Script id="theme-init" strategy="beforeInteractive">
+          {`(() => {
+  try {
+    const key = 'theme';
+    const stored = localStorage.getItem(key);
+    const theme = stored || 'system';
+    const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const resolved = theme === 'system' ? (systemDark ? 'dark' : 'light') : theme;
+    const root = document.documentElement;
+    root.classList.remove('light', 'dark');
+    root.classList.add(resolved);
+  } catch (e) {}
+})();`}
+        </Script>
+
         <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
+          defaultTheme="system"
           enableSystem
-          disableTransitionOnChange
+          storageKey="theme"
         >
           <SiteHeader />
           {children}

@@ -3,6 +3,8 @@ import { ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Reveal } from '@/components/reveal'
 
+const primaryPhone = '+91 70501 47021'
+
 export function CtaBand() {
   return (
     <section className="mx-auto max-w-7xl px-4 py-24 sm:px-6">
@@ -17,7 +19,7 @@ export function CtaBand() {
             your goals. Admissions are now open.
           </p>
           <Button
-            render={<Link href="/contact" />}
+            render={<a href={`tel:${primaryPhone.replace(/\s/g, '')}`} />}
             nativeButton={false}
             size="lg"
             className="rounded-full glow"

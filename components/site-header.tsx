@@ -12,9 +12,11 @@ import { cn } from '@/lib/utils'
 const links = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About Us' },
-  { href: '/free-content', label: 'Free Content' },
-  { href: '/contact', label: 'Contact' },
+  { href: '/our-centres', label: 'Our Centres' },
+  { href: '/courses', label: 'Courses' },
 ]
+
+const primaryPhone = '+91 70501 47021'
 
 export function SiteHeader() {
   const pathname = usePathname()
@@ -77,7 +79,7 @@ export function SiteHeader() {
           <div className="flex items-center gap-2">
             <ThemeToggle />
             <Button
-              render={<Link href="/contact" />}
+              render={<a href={`tel:${primaryPhone.replace(/\s/g, '')}`} />}
               nativeButton={false}
               className="hidden rounded-full glow sm:inline-flex"
             >
@@ -124,7 +126,7 @@ export function SiteHeader() {
               )
             })}
             <Button
-              render={<Link href="/contact" />}
+              render={<a href={`tel:${primaryPhone.replace(/\s/g, '')}`} />}
               nativeButton={false}
               className="mt-1 rounded-xl glow"
             >
