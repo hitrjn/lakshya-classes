@@ -10,37 +10,37 @@ export const faculty: Faculty[] = [
     name: 'Vishal Kumar Mishra',
     subject: 'Director',
     role: 'Founder',
-    image: '/faculty/vishal-kumar-mishra.png',
+    image: '/faculty/vishal-kumar-mishra.jpeg',
   },
   {
     name: 'Rajnish Dubey',
     subject: 'Mathematics',
-    image: '/faculty/rajnish-dubey.png',
+    image: '/faculty/rajnish-dubey.jpeg',
   },
   {
     name: 'Bipin Kumar',
     subject: 'Mathematics',
-    image: '/faculty/bipin-kumar.png',
+    image: '/faculty/bipin-kumar.jpeg',
   },
   {
     name: 'Atul Ranjan',
     subject: 'Physics',
-    image: '/faculty/atul-ranjan.png',
+    image: '/faculty/atul-ranjan.jpeg',
   },
   {
     name: 'Sujeet Kumar Mishra',
     subject: 'Science',
-    image: '/faculty/sujeet-kumar-mishra.png',
+    image: '/faculty/sujeet-kumar-mishra.jpeg',
   },
   {
     name: 'Kaushal Kumar',
     subject: 'Social Studies',
-    image: '/faculty/kaushal-kumar.png',
+    image: '/faculty/kaushal-kumar.jpeg',
   },
   {
     name: 'Saroj Kumar',
     subject: 'Sanskrit & SST',
-    image: '/faculty/saroj-kumar.png',
+    image: '/faculty/saroj-kumar.jpeg',
   },
 ]
 

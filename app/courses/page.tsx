@@ -78,6 +78,8 @@ export default function CoursesPage() {
         eyebrow="Courses"
         title="Programs built for marks and ranks"
         description="From foundation to board exams to JEE/NEET — choose a course designed for disciplined learning, regular testing, and measurable improvement."
+        imageSrc="/centres-main.png"
+        imageAlt="Students learning at Lakshya Classes"
       />
 
       <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6">
@@ -106,15 +108,6 @@ export default function CoursesPage() {
                       </h2>
                       <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                         {course.summary}
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Image placeholder (user will add real image later) */}
-                  <div className="border-t border-border bg-background/30 p-4">
-                    <div className="relative grid aspect-[16/9] place-items-center overflow-hidden rounded-2xl border border-border bg-gradient-to-br from-muted/40 via-background to-accent/10">
-                      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-                        Image placeholder
                       </p>
                     </div>
                   </div>

@@ -1,13 +1,13 @@
 import Link from 'next/link'
 import { Mail, Phone, MapPin } from 'lucide-react'
 import { Brand } from '@/components/brand'
+import navigate from 'next/navigation'
 
 const nav = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About Us' },
   { href: '/our-centres', label: 'Our Centres' },
   { href: '/courses', label: 'Courses' },
-  { href: '/courses#free-content', label: 'Free Content' },
 ]
 
 const phones = ['+91 70501 47021', '+91 70501 47022']
@@ -80,21 +80,27 @@ export function SiteFooter() {
                 className="mt-0.5 size-4 shrink-0 text-primary"
                 aria-hidden="true"
               />
-              Lalpur, Ranchi (2 Centres)
+             <a href="/our-centres" className="transition-colors hover:text-primary">
+                Lalpur, Ranchi (2 Centres)
+              </a>
             </li>
             <li className="flex items-start gap-2">
               <MapPin
                 className="mt-0.5 size-4 shrink-0 text-primary"
                 aria-hidden="true"
               />
-              Katira, Arrah
+              <a href="/our-centres" className="transition-colors hover:text-primary">
+                Katira, Arrah
+              </a>
             </li>
             <li className="flex items-start gap-2">
               <MapPin
                 className="mt-0.5 size-4 shrink-0 text-primary"
                 aria-hidden="true"
               />
-              Saguna More, Danapur, Patna
+              <a href="/our-centres" className="transition-colors hover:text-primary">
+                Saguna More, Danapur, Patna
+              </a>
             </li>
           </ul>
         </div>

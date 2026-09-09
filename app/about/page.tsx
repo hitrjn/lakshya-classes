@@ -47,7 +47,7 @@ export default function AboutPage() {
             <div className="relative mx-auto max-w-sm overflow-hidden rounded-3xl border border-border glass glow-soft">
               <div className="relative aspect-[4/5]">
                 <Image
-                  src="/faculty/vishal-kumar-mishra.png"
+                  src="/faculty/vishal-kumar-mishra.jpeg"
                   alt="Vishal Kumar Mishra, Founder and Director of Lakshya Classes"
                   fill
                   sizes="(min-width: 1024px) 40vw, 100vw"
