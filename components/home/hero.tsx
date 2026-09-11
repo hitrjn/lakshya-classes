@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { ArrowRight, Atom, Stethoscope, Sparkles } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Reveal } from '@/components/reveal'
+import { CentresGallery } from '../centres-gallery'
 
 const primaryPhone = '+91 70501 47021'
 
@@ -89,7 +90,11 @@ export function Hero() {
           ].map((card) => (
             <Reveal key={card.title} delay={card.delay}>
               <article className="group relative overflow-hidden rounded-3xl border border-border glass glow-soft">
+                <a href={`/courses`}>
                 <div className="relative aspect-[16/11] overflow-hidden">
+                
+
+              
                   <Image
                     src={card.image || '/placeholder.svg'}
                     alt={`${card.title} coaching at Lakshya Classes`}
@@ -98,8 +103,10 @@ export function Hero() {
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                     priority
                   />
+                   
                   <div className="absolute inset-0 bg-gradient-to-t from-background via-background/10 to-transparent" />
                 </div>
+                 </a>
                 <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-6">
                   <div>
                     <div className="flex items-center gap-2 text-primary">
@@ -119,6 +126,7 @@ export function Hero() {
           ))}
         </div>
       </div>
+            
     </section>
   )
 }

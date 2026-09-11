@@ -8,6 +8,7 @@ import {
 } from 'lucide-react'
 import { SectionHeading } from '@/components/section-heading'
 import { Reveal } from '@/components/reveal'
+import { CentresGallery } from '../centres-gallery'
 
 const features = [
   {
@@ -66,6 +67,8 @@ export function WhyUs() {
           </Reveal>
         ))}
       </div>
+      <CentresGallery />
+
     </section>
   )
 }

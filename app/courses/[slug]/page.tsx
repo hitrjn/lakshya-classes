@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { ArrowRight, CheckCircle2 } from 'lucide-react'
@@ -7,6 +8,15 @@ import { PageHero } from '@/components/page-hero'
 import { Reveal } from '@/components/reveal'
 import { Button } from '@/components/ui/button'
 import { courses, getCourse, type CourseSlug } from '@/lib/courses'
+
+const galleryImages = [
+  '/gallery/1000274981.jpg',
+  '/gallery/1000274983.jpg',
+  '/gallery/1000274985.jpg',
+  '/gallery/1000274993.jpg',
+  '/gallery/1000274999.jpg',
+  '/gallery/1000275009.jpg',
+]
 
 const primaryPhone = '+91 70501 47021'
 
@@ -67,11 +77,15 @@ export default async function CourseDetailPage({
         <div className="grid gap-8 lg:grid-cols-5">
           <Reveal className="lg:col-span-3">
             <div className="overflow-hidden rounded-3xl border border-border bg-card/40">
-              {/* Image placeholder - add real image later */}
-              <div className="relative grid aspect-[16/9] place-items-center bg-gradient-to-br from-muted/40 via-background to-accent/10">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-                  Hero image placeholder
-                </p>
+              <div className="relative aspect-[16/9] overflow-hidden">
+                <Image
+                  src={galleryImages[0]}
+                  alt="Lakshya Classes classroom and learning environment"
+                  fill
+                  sizes="(min-width: 1280px) 60vw, 100vw"
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
               </div>
               <div className="p-7">
                 <h2 className="text-2xl font-bold">What you’ll achieve</h2>
@@ -230,11 +244,14 @@ export default async function CourseDetailPage({
 
           <Reveal delay={120} className="lg:col-span-2">
             <div className="overflow-hidden rounded-3xl border border-border bg-card/40">
-              {/* Image placeholder */}
-              <div className="relative grid aspect-[4/5] place-items-center bg-gradient-to-br from-muted/40 via-background to-accent/10">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-                  Image placeholder
-                </p>
+              <div className="relative aspect-[4/5] overflow-hidden">
+                <Image
+                  src={galleryImages[2]}
+                  alt="Focused Lakshya Classes study environment"
+                  fill
+                  sizes="(min-width: 1024px) 30vw, 100vw"
+                  className="object-cover"
+                />
               </div>
               <div className="p-7">
                 <h3 className="text-xl font-bold">What to ask on call</h3>
@@ -282,11 +299,14 @@ export default async function CourseDetailPage({
 
           <Reveal delay={120} className="lg:col-span-2">
             <div className="overflow-hidden rounded-3xl border border-border bg-card/40">
-              {/* Image placeholder */}
-              <div className="relative grid aspect-[4/5] place-items-center bg-gradient-to-br from-muted/40 via-background to-accent/10">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-                  Image placeholder
-                </p>
+              <div className="relative aspect-[4/5] overflow-hidden">
+                <Image
+                  src={galleryImages[3]}
+                  alt="Lakshya Classes classroom discipline and strong student culture"
+                  fill
+                  sizes="(min-width: 1024px) 30vw, 100vw"
+                  className="object-cover"
+                />
               </div>
               <div className="p-7">
                 <h3 className="text-xl font-bold">Why Lakshya works</h3>

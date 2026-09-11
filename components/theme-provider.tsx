@@ -45,7 +45,7 @@ export function ThemeProvider({
   enableSystem?: boolean
 }) {
   const [theme, setThemeState] = useState<Theme>(defaultTheme)
-  const [resolvedTheme, setResolvedTheme] = useState<ResolvedTheme>('dark')
+  const [resolvedTheme, setResolvedTheme] = useState<ResolvedTheme>('light')
 
   // Initial sync from localStorage (and apply class)
   useEffect(() => {

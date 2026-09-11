@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowUpRight, Building2, MapPin, Users } from 'lucide-react'
+import { CentresGallery } from '@/components/centres-gallery'
 import { CtaBand } from '@/components/cta-band'
 import { MapEmbed } from '@/components/map-embed'
 import { PageHero } from '@/components/page-hero'
@@ -68,9 +69,23 @@ export default function OurCentresPage() {
         eyebrow="Our Centres"
         title="Coaching that stays close to home"
         description="Lakshya Classes supports students across Ara, Patna, and Ranchi with high-quality teaching, regular mentoring, and structured preparation for competitive exams."
+        imageSrc="/gallery/1000274993.jpg"
+        imageAlt="Lakshya Classes centres and campus environment"
       />
 
+
       <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6">
+        <div className="mb-8 flex items-end justify-between gap-4">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-primary/80">
+              Our presence
+            </p>
+            <h2 className="mt-2 text-3xl font-black tracking-tight sm:text-4xl">
+              Learning hubs designed for growth
+            </h2>
+          </div>
+        </div>
+
         <div className="grid gap-6 lg:grid-cols-3">
           {centres.map((centre, index) => (
             <Reveal key={centre.city} delay={index * 100}>
@@ -85,7 +100,7 @@ export default function OurCentresPage() {
                     </span>
                   </div>
 
-                  <div className="rounded-2xl border border-border bg-background/50 p-4">
+                  <div className="rounded-2xl border border-border bg-background/60 p-4 shadow-[0_15px_40px_-25px_rgba(59,130,246,0.5)]">
                     <p className="text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">
                       Centre
                     </p>
@@ -139,14 +154,19 @@ export default function OurCentresPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
+      <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6">
+        <div className="mb-6">
+          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-primary/80">
+            Why students choose us
+          </p>
+        </div>
         <div className="grid gap-5 md:grid-cols-3">
           {benefits.map((benefit, index) => {
             const Icon = benefit.icon
             return (
               <Reveal key={benefit.title} delay={index * 100}>
-                <article className="h-full rounded-2xl border border-border bg-card/40 p-7">
-                  <span className="grid size-12 place-items-center rounded-xl bg-primary/10 text-primary">
+                <article className="h-full rounded-2xl border border-border bg-card/40 p-7 shadow-[0_15px_40px_-30px_rgba(59,130,246,0.45)] transition-all duration-300 hover:-translate-y-1 hover:border-primary/30">
+                  <span className="grid size-12 place-items-center rounded-xl bg-primary/10 text-primary ring-1 ring-primary/10">
                     <Icon className="size-5" aria-hidden="true" />
                   </span>
                   <h3 className="mt-5 text-xl font-bold">{benefit.title}</h3>

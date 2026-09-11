@@ -5,6 +5,7 @@ import Script from 'next/script'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import { ThemeProvider } from '@/components/theme-provider'
+import { ReloadSplash } from '@/components/reload-splash'
 import './globals.css'
 
 const inter = Inter({
@@ -57,7 +58,7 @@ export default function RootLayout({
   try {
     const key = 'theme';
     const stored = localStorage.getItem(key);
-    const theme = stored || 'system';
+    const theme = stored || 'light';
     const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     const resolved = theme === 'system' ? (systemDark ? 'dark' : 'light') : theme;
     const root = document.documentElement;
@@ -68,10 +69,11 @@ export default function RootLayout({
         </Script>
 
         <ThemeProvider
-          defaultTheme="system"
+          defaultTheme="light"
           enableSystem
           storageKey="theme"
         >
+          <ReloadSplash />
           <SiteHeader />
           {children}
           <SiteFooter />

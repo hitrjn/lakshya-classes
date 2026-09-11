@@ -38,6 +38,8 @@ export default function AboutPage() {
         eyebrow="About Us"
         title="Nine years of turning aspirations into achievements"
         description="Lakshya Classes was built on a simple belief — with the right guidance and relentless focus, every student can reach their target."
+        imageSrc="/logo.png"
+        imageAlt="Lakshya Classes logo"
       />
 
       {/* Founder */}

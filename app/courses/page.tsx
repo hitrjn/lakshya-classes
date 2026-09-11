@@ -147,82 +147,13 @@ export default function CoursesPage() {
             >
               Find your nearest centre
             </Button>
-            <Button
-              render={<a href="#free-content" />}
-              nativeButton={false}
-              variant="outline"
-              className="rounded-full"
-            >
-              Try free content
-            </Button>
           </div>
         </Reveal>
       </section>
-
-      {/* Free content (merged from /free-content) */}
-      <section
-        id="free-content"
-        className="mx-auto max-w-7xl scroll-mt-28 px-4 py-16 sm:px-6"
-      >
-        <SectionHeading
-          eyebrow="Free Content"
-          title="Start learning today — completely free"
-          description="Explore a growing library of lectures, notes, and practice material curated by our faculty to support your JEE and NEET journey."
-        />
-
-        {/* Resource types */}
-        <div className="mt-12 grid gap-5 md:grid-cols-3">
-          {resourceTypes.map((res, i) => (
-            <Reveal key={res.title} delay={i * 100}>
-              <article className="group flex h-full flex-col rounded-2xl border border-border glass p-7 transition-all duration-300 hover:border-primary/40">
-                <div className="flex items-center justify-between">
-                  <span className="grid size-12 place-items-center rounded-xl bg-primary/10 text-primary transition-all duration-300 group-hover:bg-primary group-hover:text-primary-foreground group-hover:glow">
-                    <res.icon className="size-6" aria-hidden="true" />
-                  </span>
-                  <span className="rounded-full border border-border px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-wider text-muted-foreground">
-                    {res.tag}
-                  </span>
-                </div>
-                <h3 className="mt-5 text-lg font-bold">{res.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  {res.desc}
-                </p>
-              </article>
-            </Reveal>
-          ))}
-        </div>
-
-        {/* Subjects */}
-        <div className="mt-16">
-          <SectionHeading
-            eyebrow="Browse by Subject"
-            title="Pick a subject and dive in"
-            description="Free study material organised by subject so you can focus exactly where you need to."
-          />
-
-          <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {subjects.map((subject, i) => (
-              <Reveal key={subject.name} delay={(i % 4) * 80}>
-                <article className="group h-full rounded-2xl border border-border bg-card/40 p-6 transition-all duration-300 hover:border-primary/40 hover:bg-card/70">
-                  <span className="grid size-14 place-items-center rounded-2xl bg-primary/10 text-primary transition-transform duration-300 group-hover:scale-105">
-                    <subject.icon className="size-7" aria-hidden="true" />
-                  </span>
-                  <h3 className="mt-5 text-xl font-bold">{subject.name}</h3>
-                  <p className="mt-1 text-sm text-muted-foreground">
-                    {subject.count}
-                  </p>
-                  <span className="mt-4 inline-flex rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
-                    {subject.for}
-                  </span>
-                </article>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
+    
 
       {/* Access strip */}
-      <section className="mx-auto max-w-7xl px-4 py-4 sm:px-6">
+      {/* <section className="mx-auto max-w-7xl px-4 py-4 sm:px-6">
         <Reveal className="flex flex-col items-center justify-between gap-6 rounded-3xl border border-border glass p-8 text-center sm:flex-row sm:text-left">
           <div>
             <h3 className="text-xl font-bold">Want the full course experience?</h3>
@@ -241,7 +172,7 @@ export default function CoursesPage() {
             <ArrowRight className="size-4" aria-hidden="true" />
           </Button>
         </Reveal>
-      </section>
+      </section> */}
 
       <CtaBand />
     </main>
