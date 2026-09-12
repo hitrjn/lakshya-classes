@@ -9,9 +9,12 @@ import { Reveal } from '@/components/reveal'
 import { Button } from '@/components/ui/button'
 
 export const metadata: Metadata = {
-  title: 'Our Centres | Lakshya Classes',
+  title: 'Lakshya Classes Centres | Ranchi, Patna & Arrah Coaching',
   description:
-    'Visit Lakshya Classes at our centres in Ara, Patna, and Ranchi for focused IIT JEE and NEET preparation.',
+    'Visit Lakshya Classes at our coaching centres in Ranchi, Patna, and Arrah for focused IIT JEE, NEET, and board exam preparation.',
+  alternates: {
+    canonical: '/our-centres',
+  },
 }
 
 const centres = [

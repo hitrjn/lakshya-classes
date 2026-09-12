@@ -8,9 +8,12 @@ import { CtaBand } from '@/components/cta-band'
 import { Reveal } from '@/components/reveal'
 
 export const metadata: Metadata = {
-  title: 'About Us | Lakshya Classes',
+  title: 'About Lakshya Classes | Founder Vishal Kumar Mishra',
   description:
-    'Founded in 2015 by Vishal Kumar Mishra, Lakshya Classes has 9+ years of experience coaching IIT JEE and NEET aspirants across four centres.',
+    'Founded in 2015 by Vishal Kumar Mishra, Lakshya Classes has 9+ years of experience coaching IIT JEE and NEET aspirants across Ranchi, Arrah, and Patna.',
+  alternates: {
+    canonical: '/about',
+  },
 }
 
 const pillars = [

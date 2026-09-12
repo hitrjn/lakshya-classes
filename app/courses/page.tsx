@@ -23,9 +23,12 @@ import { Button } from '@/components/ui/button'
 import { courses } from '@/lib/courses'
 
 export const metadata: Metadata = {
-  title: 'Courses | Lakshya Classes',
+  title: 'Courses | IIT JEE, NEET, Boards & Foundation Coaching',
   description:
-    'Explore Lakshya Classes courses and free learning resources for IIT JEE, NEET, Boards, and Foundation (Class 6–10).',
+    'Explore Lakshya Classes courses for IIT JEE, NEET, Boards, and Foundation (Class 6–10) with structured batches, tests, and mentoring.',
+  alternates: {
+    canonical: '/courses',
+  },
 }
 
 const primaryPhone = '+91 70501 47021'
