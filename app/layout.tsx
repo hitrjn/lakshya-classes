@@ -70,34 +70,45 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
+        url: '/icon.svg',
+        width: 256,
+        height: 256,
+        alt: 'Lakshya Classes icon',
+      },
+      {
         url: '/logo.png',
         width: 1200,
         height: 630,
         alt: 'Lakshya Classes logo',
       },
-      {
-        url: '/faculty/vishal-kumar-mishra.jpeg',
-        width: 1200,
-        height: 1500,
-        alt: 'Vishal Kumar Mishra, Founder and Director of Lakshya Classes',
-      },
     ],
   },
   twitter: {
-    card: 'summary_large_image',
+    card: 'summary',
     title: 'Lakshya Classes',
     description:
       'IIT JEE, NEET, and board preparation with personalised mentoring across Ranchi, Arrah, and Patna.',
-    images: ['/logo.png'],
+    images: ['/icon.svg'],
     creator: '@lakshyaclasses',
   },
   icons: {
     icon: [
+      { url: '/icon.svg' },
+      { url: '/logo.png', type: 'image/png' },
       { url: '/icon-light-32x32.png', media: '(prefers-color-scheme: light)' },
       { url: '/icon-dark-32x32.png', media: '(prefers-color-scheme: dark)' },
-      { url: '/icon.svg' },
+      { url: '/favicon.ico' },
     ],
-    apple: '/apple-icon.png',
+    shortcut: '/icon.svg',
+    apple: [
+      '/apple-icon.png',
+      { url: '/icon.svg', sizes: '180x180', type: 'image/svg+xml' },
+      { url: '/logo.png', sizes: '180x180', type: 'image/png' }
+    ],
+    other: [
+      { rel: 'mask-icon', url: '/icon.svg', color: '#0b1220' },
+      { rel: 'manifest', url: '/site.webmanifest' },
+    ],
   },
   category: 'education',
   other: {
