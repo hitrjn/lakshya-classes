@@ -93,6 +93,7 @@ export function CentresGallery() {
           <div className="relative h-[420px] overflow-hidden sm:h-[500px]">
             <Image
               src={currentImage.src}
+              alt={currentImage.title || "Campus life gallery image"}
               fill
               priority
               sizes="(min-width: 1024px) 40vw, 80vw"
@@ -124,7 +125,7 @@ export function CentresGallery() {
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-1">
           {gallery.slice(1, 4).map((image, index) => (
             <button
-              key={image.title}
+              key={image.src || index}
               type="button"
               onClick={() => setActiveIndex((index + 1) % gallery.length)}
               className={`group relative overflow-hidden rounded-[26px] border text-left transition-all duration-300 ${
@@ -136,7 +137,7 @@ export function CentresGallery() {
               <div className="relative h-40 overflow-hidden sm:h-44">
                 <Image
                   src={image.src}
-                  alt={image.title}
+                  alt={image.title || "Gallery Image"}
                   fill
                   sizes="(min-width: 1024px) 30vw, 50vw"
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -169,7 +170,7 @@ export function CentresGallery() {
             <div className="relative h-32 overflow-hidden">
               <Image
                 src={image.src}
-                alt={image.title}
+                alt={image.title || "Campus gallery image"}
                 fill
                 sizes="(min-width: 1280px) 25vw, (min-width: 640px) 50vw, 100vw"
                 className="object-cover transition-transform duration-700 group-hover:scale-110"

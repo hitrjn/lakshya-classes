@@ -13,7 +13,8 @@ const links = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About Us' },
   { href: '/our-centres', label: 'Our Centres' },
-  { href: '/courses', label: 'Courses' },
+  { href: '/courses/jee-neet', label: 'JEE/NEET' },
+  { href: '/courses/foundation', label: 'Foundation' },
 ]
 
 const primaryPhone = '+91 70501 47021'
@@ -49,13 +50,9 @@ export function SiteHeader() {
           )}
         >
           <Brand />
-
           <nav className="hidden items-center gap-1 md:flex" aria-label="Primary">
             {links.map((link) => {
-              const active =
-                link.href === '/'
-                  ? pathname === '/'
-                  : pathname.startsWith(link.href)
+              const active = link.href === '/' ? pathname === '/' : pathname.startsWith(link.href)
               return (
                 <Link
                   key={link.href}
@@ -74,9 +71,6 @@ export function SiteHeader() {
                 </Link>
               )
             })}
-          </nav>
-
-          <div className="flex items-center gap-2">
             <ThemeToggle />
             <Button
               render={<a href={`tel:${primaryPhone.replace(/\s/g, '')}`} />}
@@ -95,7 +89,7 @@ export function SiteHeader() {
             >
               {open ? <X className="size-5" /> : <Menu className="size-5" />}
             </button>
-          </div>
+          </nav>
         </div>
       </div>
 
@@ -106,10 +100,7 @@ export function SiteHeader() {
             aria-label="Mobile"
           >
             {links.map((link) => {
-              const active =
-                link.href === '/'
-                  ? pathname === '/'
-                  : pathname.startsWith(link.href)
+              const active = link.href === '/' ? pathname === '/' : pathname.startsWith(link.href)
               return (
                 <Link
                   key={link.href}

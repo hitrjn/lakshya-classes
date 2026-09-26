@@ -6,6 +6,7 @@ import { ArrowRight, CheckCircle2 } from 'lucide-react'
 
 import { PageHero } from '@/components/page-hero'
 import { Reveal } from '@/components/reveal'
+import { JsonLd } from '@/components/structured-data'
 import { Button } from '@/components/ui/button'
 import { courses, getCourse, type CourseSlug } from '@/lib/courses'
 
@@ -35,6 +36,26 @@ export function generateMetadata({
     return {
       title: `${course.title} | Lakshya Classes`,
       description: course.metaDescription,
+      alternates: {
+        canonical: `/courses/${course.slug}`,
+      },
+      openGraph: {
+        title: `${course.title} Coaching | Lakshya Classes`,
+        description: course.metaDescription,
+        url: `https://lakshyaclasses.in/courses/${course.slug}`,
+        images: [
+          {
+            url: '/logo.png',
+            alt: 'Lakshya Classes logo',
+          },
+        ],
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title: `${course.title} Coaching | Lakshya Classes`,
+        description: course.metaDescription,
+        images: ['/logo.png'],
+      },
     }
   })
 }
@@ -48,8 +69,43 @@ export default async function CourseDetailPage({
   const course = getCourse(slug)
   if (!course) notFound()
 
+  const courseUrl = `https://lakshyaclasses.in/courses/${course.slug}`
+
   return (
     <main>
+      <JsonLd
+        data={{
+          '@context': 'https://schema.org',
+          '@graph': [
+            {
+              '@type': 'Course',
+              name: `${course.title} Coaching`,
+              description: course.metaDescription,
+              url: courseUrl,
+              image: 'https://lakshyaclasses.in/logo.png',
+              provider: {
+                '@id': 'https://lakshyaclasses.in/#organization',
+              },
+              availableLanguage: 'en',
+              audience: {
+                '@type': 'EducationalAudience',
+                audienceType: course.forStudents,
+              },
+            },
+            {
+              '@type': 'FAQPage',
+              mainEntity: course.faqs.map((faq) => ({
+                '@type': 'Question',
+                name: faq.q,
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: faq.a,
+                },
+              })),
+            },
+          ],
+        }}
+      />
       <PageHero
         eyebrow="Course Details"
         title={course.title}

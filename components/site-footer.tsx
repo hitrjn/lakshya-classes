@@ -3,11 +3,13 @@ import { Mail, Phone, MapPin } from 'lucide-react'
 import { Brand } from '@/components/brand'
 import navigate from 'next/navigation'
 
+
 const nav = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About Us' },
   { href: '/our-centres', label: 'Our Centres' },
-  { href: '/courses', label: 'Courses' },
+  { href: '/courses/jee-neet', label: 'JEE/NEET' },
+  { href: '/courses/foundation', label: 'Foundation' },
 ]
 
 const phones = ['+91 70501 47021', '+91 70501 47022']

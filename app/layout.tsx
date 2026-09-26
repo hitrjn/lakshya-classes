@@ -4,8 +4,9 @@ import { Inter } from 'next/font/google'
 import Script from 'next/script'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
+import { SiteStructuredData } from '@/components/structured-data'
 import { ThemeProvider } from '@/components/theme-provider'
-import { ReloadSplash } from '@/components/reload-splash'
+
 import './globals.css'
 
 const siteUrl = 'https://lakshyaclasses.in'
@@ -18,10 +19,9 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: 'Lakshya Classes | Premier IIT JEE & NEET Coaching',
+  title: 'Lakshya Classes | IIT JEE, NEET & Foundation Coaching',
   description:
     'Lakshya Classes offers intensive, result-oriented coaching for IIT JEE and NEET with 9+ years of experience, expert educators, and structured preparation across Ranchi, Arrah, and Patna.',
-  generator: 'v0.app',
   applicationName: 'Lakshya Classes',
   keywords: [
     'Lakshya Classes',
@@ -32,7 +32,13 @@ export const metadata: Metadata = {
     'Arrah coaching classes',
     'Patna coaching institute',
     'board exam coaching',
-    'foundation classes',
+    'foundation coaching for Class 6 to 10',
+    'JEE coaching in Ranchi',
+    'NEET coaching in Ranchi',
+    'JEE coaching in Patna',
+    'NEET coaching in Patna',
+    'JEE coaching in Ara',
+    'NEET coaching in Ara',
   ],
   authors: [{ name: 'Lakshya Classes', url: siteUrl }],
   creator: 'Lakshya Classes',
@@ -141,13 +147,14 @@ export default function RootLayout({
   } catch (e) {}
 })();`}
         </Script>
+  <SiteStructuredData />
 
         <ThemeProvider
           defaultTheme="light"
           enableSystem
           storageKey="theme"
         >
-          <ReloadSplash />
+
           <SiteHeader />
           {children}
           <SiteFooter />

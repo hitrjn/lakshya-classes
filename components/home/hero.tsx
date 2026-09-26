@@ -17,7 +17,7 @@ export function Hero() {
       />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <div className="grid items-center gap-10 md:grid-cols-2 md:gap-14">
+        <div className="grid items-center gap-10 md:grid-cols-[2fr_3fr] md:gap-14">
           
 
           <Reveal className="order-2 flex flex-col items-center text-center md:items-start md:text-left">
@@ -57,13 +57,13 @@ export function Hero() {
             </div>
           </Reveal>
           <Reveal className="relative order-1">
-            <div className="relative mx-auto aspect-[1/1] w-full max-w-lg overflow-hidden rounded-3xl border border-border glass glow-soft md:mx-0">
+            <div className="relative mx-auto aspect-[4/3] w-full max-w-lg overflow-hidden rounded-3xl border border-border glass glow-soft md:mx-0">
               <Image
                 src="/hero-es.png"
                 alt="Lakshya Classes classroom"
                 fill
                 sizes="(min-width: 768px) 50vw, 100vw"
-                className="object-cover"
+                className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
                 priority
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/20 via-transparent to-transparent" />
