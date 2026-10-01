@@ -3,9 +3,9 @@
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Menu, X, Phone } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import { Brand } from '@/components/brand'
-import { Button } from '@/components/ui/button'
+import { EnquiryButton } from '@/components/enquiry-button'
 import { ThemeToggle } from '@/components/theme-toggle'
 import { cn } from '@/lib/utils'
 
@@ -16,8 +16,6 @@ const links = [
   { href: '/courses/jee-neet', label: 'JEE/NEET' },
   { href: '/courses/foundation', label: 'Foundation' },
 ]
-
-const primaryPhone = '+91 70501 47021'
 
 export function SiteHeader() {
   const pathname = usePathname()
@@ -72,24 +70,21 @@ export function SiteHeader() {
               )
             })}
             <ThemeToggle />
-            <Button
-              render={<a href={`tel:${primaryPhone.replace(/\s/g, '')}`} />}
-              nativeButton={false}
+            <EnquiryButton
               className="hidden rounded-full glow sm:inline-flex"
             >
-              <Phone className="size-4" aria-hidden="true" />
               Enquire Now
-            </Button>
-            <button
-              type="button"
-              onClick={() => setOpen((v) => !v)}
-              className="grid size-10 place-items-center rounded-full border border-border text-foreground md:hidden"
-              aria-label={open ? 'Close menu' : 'Open menu'}
-              aria-expanded={open}
-            >
-              {open ? <X className="size-5" /> : <Menu className="size-5" />}
-            </button>
+            </EnquiryButton>
           </nav>
+          <button
+            type="button"
+            onClick={() => setOpen((v) => !v)}
+            className="grid size-10 place-items-center rounded-full border border-border text-foreground md:hidden"
+            aria-label={open ? 'Close menu' : 'Open menu'}
+            aria-expanded={open}
+          >
+            {open ? <X className="size-5" /> : <Menu className="size-5" />}
+          </button>
         </div>
       </div>
 
@@ -116,13 +111,9 @@ export function SiteHeader() {
                 </Link>
               )
             })}
-            <Button
-              render={<a href={`tel:${primaryPhone.replace(/\s/g, '')}`} />}
-              nativeButton={false}
-              className="mt-1 rounded-xl glow"
-            >
+            <EnquiryButton className="mt-1 rounded-xl glow">
               Enquire Now
-            </Button>
+            </EnquiryButton>
             <div className="mt-1 flex items-center justify-between rounded-xl px-4 py-2 text-sm font-medium text-muted-foreground">
               Appearance
               <ThemeToggle />

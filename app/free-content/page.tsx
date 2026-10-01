@@ -14,10 +14,9 @@ import {
 import { PageHero } from '@/components/page-hero'
 import { SectionHeading } from '@/components/section-heading'
 import { CtaBand } from '@/components/cta-band'
+import { EnquiryButton } from '@/components/enquiry-button'
 import { Reveal } from '@/components/reveal'
 import { Button } from '@/components/ui/button'
-
-const primaryPhone = '+91 70501 47021'
 
 export const metadata: Metadata = {
   title: 'Free Content | Lakshya Classes',
@@ -127,15 +126,13 @@ export default function FreeContentPage() {
               support, and regular assessments.
             </p>
           </div>
-          <Button
-              render={<a href={`tel:${primaryPhone.replace(/\s/g, '')}`} />}
-            nativeButton={false}
+          <EnquiryButton
             size="lg"
             className="shrink-0 rounded-full glow"
           >
             Enquire About Batches
             <ArrowRight className="size-4" aria-hidden="true" />
-          </Button>
+          </EnquiryButton>
         </Reveal>
       </section>
 

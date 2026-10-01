@@ -1,11 +1,10 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowRight, Atom, Stethoscope, Sparkles } from 'lucide-react'
+import { EnquiryButton } from '@/components/enquiry-button'
 import { Button } from '@/components/ui/button'
 import { Reveal } from '@/components/reveal'
 import { CentresGallery } from '../centres-gallery'
-
-const primaryPhone = '+91 70501 47021'
 
 export function Hero() {
   return (
@@ -36,15 +35,13 @@ export function Hero() {
               crack India&apos;s toughest entrance exams.
             </p>
             <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row md:items-start">
-              <Button
-                render={<a href={`tel:${primaryPhone.replace(/\s/g, '')}`} />}
-                nativeButton={false}
+              <EnquiryButton
                 size="lg"
                 className="rounded-full glow"
               >
                 Book a Free Counselling
                 <ArrowRight className="size-4" aria-hidden="true" />
-              </Button>
+              </EnquiryButton>
               <Button
                 render={<Link href="/courses" />}
                 nativeButton={false}

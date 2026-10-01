@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { Mail, Phone, MapPin } from 'lucide-react'
 import { Brand } from '@/components/brand'
+import { EnquiryButton } from '@/components/enquiry-button'
 import navigate from 'next/navigation'
 
 
@@ -51,13 +52,14 @@ export function SiteFooter() {
           <ul className="mt-4 flex flex-col gap-3 text-sm text-muted-foreground">
             {phones.map((p) => (
               <li key={p}>
-                <a
-                  href={`tel:${p.replace(/\s/g, '')}`}
-                  className="flex items-center gap-2 transition-colors hover:text-primary"
+                <EnquiryButton
+                  variant="link"
+                  className="h-auto w-full justify-start gap-2 p-0 text-muted-foreground transition-colors hover:text-primary"
+                  dialogTitle="Enquire with Lakshya Classes"
                 >
                   <Phone className="size-4 text-primary" aria-hidden="true" />
                   {p}
-                </a>
+                </EnquiryButton>
               </li>
             ))}
             <li>

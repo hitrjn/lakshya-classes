@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { Phone, Mail, MapPin, Clock } from 'lucide-react'
 import { PageHero } from '@/components/page-hero'
+import { EnquiryButton } from '@/components/enquiry-button'
 import { LeadForm } from '@/components/lead-form'
 import { Reveal } from '@/components/reveal'
 import { MapEmbed } from '@/components/map-embed'
@@ -52,12 +53,13 @@ export default function ContactPage() {
                 <ul className="mt-3 flex flex-col gap-2">
                   {phones.map((p) => (
                     <li key={p}>
-                      <a
-                        href={`tel:${p.replace(/\s/g, '')}`}
-                        className="text-sm text-muted-foreground transition-colors hover:text-primary"
+                      <EnquiryButton
+                        variant="link"
+                        className="h-auto p-0 text-muted-foreground hover:text-primary"
+                        dialogTitle="Enquire with Lakshya Classes"
                       >
                         {p}
-                      </a>
+                      </EnquiryButton>
                     </li>
                   ))}
                 </ul>

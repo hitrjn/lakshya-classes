@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation'
 import { ArrowRight, CheckCircle2 } from 'lucide-react'
 
 import { PageHero } from '@/components/page-hero'
+import { EnquiryButton } from '@/components/enquiry-button'
 import { Reveal } from '@/components/reveal'
 import { JsonLd } from '@/components/structured-data'
 import { Button } from '@/components/ui/button'
@@ -18,8 +19,6 @@ const galleryImages = [
   '/gallery/1000274999.jpg',
   '/gallery/1000275009.jpg',
 ]
-
-const primaryPhone = '+91 70501 47021'
 
 export function generateStaticParams() {
   return courses.map((c) => ({ slug: c.slug }))
@@ -157,14 +156,12 @@ export default async function CourseDetailPage({
                     Visit a centre
                     <ArrowRight className="size-4" aria-hidden="true" />
                   </Button>
-                  <Button
-                    render={<a href={`tel:${primaryPhone.replace(/\s/g, '')}`} />}
-                    nativeButton={false}
+                  <EnquiryButton
                     variant="outline"
                     className="rounded-full"
                   >
                     Call for batch details
-                  </Button>
+                  </EnquiryButton>
                 </div>
               </div>
             </div>
@@ -278,13 +275,11 @@ export default async function CourseDetailPage({
               </ol>
 
               <div className="mt-6 flex flex-wrap gap-3">
-                <Button
-                  render={<a href={`tel:${primaryPhone.replace(/\s/g, '')}`} />}
-                  nativeButton={false}
+                <EnquiryButton
                   className="rounded-full glow"
                 >
                   Call for admission
-                </Button>
+                </EnquiryButton>
                 <Button
                   render={<Link href="/our-centres" />}
                   nativeButton={false}
@@ -420,14 +415,12 @@ export default async function CourseDetailPage({
               Call us for batch timings, fee structure, and a counselling session. You can also visit the nearest centre to understand the teaching style and class environment.
             </p>
             <div className="mt-3 flex flex-wrap gap-3">
-              <Button
-                render={<a href={`tel:${primaryPhone.replace(/\s/g, '')}`} />}
-                nativeButton={false}
+              <EnquiryButton
                 size="lg"
                 className="rounded-full glow"
               >
                 Call Now
-              </Button>
+              </EnquiryButton>
               <Button
                 render={<Link href="/our-centres" />}
                 nativeButton={false}

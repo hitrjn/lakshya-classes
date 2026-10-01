@@ -1,9 +1,8 @@
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
+import { EnquiryButton } from '@/components/enquiry-button'
 import { Button } from '@/components/ui/button'
 import { Reveal } from '@/components/reveal'
-
-const primaryPhone = '+91 70501 47021'
 
 export function CtaBand() {
   return (
@@ -18,15 +17,13 @@ export function CtaBand() {
             Talk to our counsellors and discover a preparation plan built around
             your goals. Admissions are now open.
           </p>
-          <Button
-            render={<a href={`tel:${primaryPhone.replace(/\s/g, '')}`} />}
-            nativeButton={false}
+          <EnquiryButton
             size="lg"
             className="rounded-full glow"
           >
             Get Started Today
             <ArrowRight className="size-4" aria-hidden="true" />
-          </Button>
+          </EnquiryButton>
         </div>
       </Reveal>
     </section>
