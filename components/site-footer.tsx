@@ -11,6 +11,7 @@ const nav = [
   { href: '/our-centres', label: 'Our Centres' },
   { href: '/courses/jee-neet', label: 'JEE/NEET' },
   { href: '/courses/foundation', label: 'Foundation' },
+  { href: '/notes', label: 'Notes' },
 ]
 
 const phones = ['+91 70501 47021', '+91 70501 47022']

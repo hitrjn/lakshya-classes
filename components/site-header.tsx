@@ -15,6 +15,7 @@ const links = [
   { href: '/our-centres', label: 'Our Centres' },
   { href: '/courses/jee-neet', label: 'JEE/NEET' },
   { href: '/courses/foundation', label: 'Foundation' },
+  { href: '/notes', label: 'Notes' },
 ]
 
 export function SiteHeader() {
