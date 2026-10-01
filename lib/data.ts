@@ -33,6 +33,11 @@ export const faculty: Faculty[] = [
     image: '/faculty/sujeet-kumar-mishra.jpeg',
   },
   {
+    name: 'AB Pandey',
+    subject: 'Chemistry',
+    image: '/faculty/ab-pandey.jpeg',
+  },
+  {
     name: 'Kaushal Kumar',
     subject: 'Social Studies',
     image: '/faculty/kaushal-kumar.jpeg',
