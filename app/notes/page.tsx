@@ -5,6 +5,7 @@ import { CtaBand } from '@/components/cta-band'
 import { PageHero } from '@/components/page-hero'
 import { Reveal } from '@/components/reveal'
 import { SectionHeading } from '@/components/section-heading'
+import { TopIqReadyPromo } from '@/components/topiqready-promo'
 
 export const metadata: Metadata = {
   title: 'Class Notes | Lakshya Classes',
@@ -78,6 +79,11 @@ export default function NotesPage() {
       </section>
 
       {/* Future class sections can be re-enabled here */}
+
+      <TopIqReadyPromo
+        title="Looking for more ways to get ready?"
+        description="Visit TopIQReady.in to explore additional learning resources for your studies."
+      />
 
       <CtaBand />
     </main>

@@ -43,6 +43,16 @@ export function SiteFooter() {
                 </Link>
               </li>
             ))}
+            <li>
+              <a
+                href="https://topiqready.in"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-muted-foreground transition-colors hover:text-primary"
+              >
+                TopIQReady.in
+              </a>
+            </li>
           </ul>
         </div>
 

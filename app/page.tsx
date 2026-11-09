@@ -5,6 +5,7 @@ import { WhyUs } from '@/components/home/why-us'
 import { SectionHeading } from '@/components/section-heading'
 import { FacultyGrid } from '@/components/faculty-grid'
 import { CtaBand } from '@/components/cta-band'
+import { TopIqReadyPromo } from '@/components/topiqready-promo'
 
 export const metadata: Metadata = {
   title: 'Lakshya Classes | IIT JEE, NEET & Board Coaching in Ranchi, Patna & Arrah',
@@ -35,6 +36,10 @@ export default function HomePage() {
       <Hero />
       <Stats />
       <WhyUs />
+      <TopIqReadyPromo
+        title="Keep building your path to success"
+        description="Discover more learning resources and tools at TopIQReady.in."
+      />
 
       <section className="mx-auto max-w-7xl px-4 pb-8 sm:px-6">
         <SectionHeading
