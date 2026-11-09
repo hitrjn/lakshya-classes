@@ -6,6 +6,7 @@ import { SectionHeading } from '@/components/section-heading'
 import { FacultyGrid } from '@/components/faculty-grid'
 import { CtaBand } from '@/components/cta-band'
 import { TopIqReadyPromo } from '@/components/topiqready-promo'
+import { TopIqReadyPopup } from '@/components/topiqready-popup'
 
 export const metadata: Metadata = {
   title: 'Lakshya Classes | IIT JEE, NEET & Board Coaching in Ranchi, Patna & Arrah',
@@ -33,6 +34,7 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <main>
+      <TopIqReadyPopup />
       <Hero />
       <Stats />
       <WhyUs />
